@@ -1,0 +1,38 @@
+docker คือ Engine ที่ทำหน้าจำลอง environment(สภาพแวดล้อม) ของเครื่อง server เพื่อให้ run service หรือ Application ที่เราต้องการ
+Virtual Machine คือ ทำหน้าที่จำลอง os ทั้งเครื่อง  (เครื่องจำลอง)
+
+#####สรุป #####
+Docker จำลองสภาพแวดล้อมทั้งหมด เพื่อให้ run Application ที่เราต้องการได้
+Virtual Machine ทำหน้าที่จำลอง os ทั้งเครื่อง  (เครื่องจำลอง)
+
+#############################
+##การ save file Docker.tar
+docker images 
+pwd
+docker save -o (part)file.tar (images docker) //save file
+##
+docker save -o /c/Users/kimku/Desktop/TrainingDocker28042020/centos.tar centos:latest ##
+docker rmi -f hello-world:latest //ลบ images
+docker load -i /c/Users/kimku/Desktop/TrainingDocker28042020/helloworld.tar //load file .tar
+docker ps // เช็ค CONTAINER ที่ทำงานยุ
+docker ps -a //เช็ค CONTAINER ทั้งหมดที่เคยทำงานหรือทำงานอยู่
+
+#############################
+docker commit 6a68cc5e9aa5 therapong1994/hello-world:testv1
+##commit images coker hub
+#############
+##push ขึ้น  Docker hub 
+docker push therapong1994/hello-world:testv1
+##############################
+doc pull therapong1994/hello-world:testv1
+##############################
+##การ build docker file
+##สร้าง Docker file 
+vim Dockerfile
+##
+FROM hello-world
+##
+docker build -t kimthera/hello-world:dockerfile .
+######################################
+
+index
